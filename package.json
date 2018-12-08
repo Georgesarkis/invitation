@@ -8,7 +8,6 @@
   "description": "ExpressJS with Mongoose Template",
   "main": "server/app.js",
   "scripts": {
-    "postinstall": "browserify -t vueify -e client/ownerMain.js -o client/build/ownerBuild.js",
     "start": "node ./server/app.js",
     "test": "newman run ./tests/api-tests.postman.json"
   },
