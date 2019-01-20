@@ -12,7 +12,8 @@ var app = new Vue({
         email:"",
         tel:"",
         subject:"",
-        message:""
+        message:"",
+        wishes:""
     },
     methods: {
         WillAttend: function() {
@@ -59,8 +60,22 @@ var app = new Vue({
             })
             .then(function(response) {
             console.log(response);
-            //window.alert("We have recived your massage!Thank you.");
             swal("We have recived your massage!Thank you.");
+            })
+            .catch(function(error) {
+            console.log(error.response);
+            });
+        },
+        SendWishes:function(){
+            axios
+            .post("/api/wishes", {
+                FirstName: this.fname,
+                LastName: this.lname,
+                Wishes: this.wishes,
+            })
+            .then(function(response) {
+            console.log(response);
+            swal("Thank you for your worm wishes");
             })
             .catch(function(error) {
             console.log(error.response);

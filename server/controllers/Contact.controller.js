@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var ContactSchema = require('../models/Contact');
 
-// Create a new camel
 router.post('/', function(req, res, next) {
     var Contact = new ContactSchema(req.body);
     Contact.save(function(err) {
