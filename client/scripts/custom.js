@@ -25,8 +25,7 @@ var app = new Vue({
             })
             .then(function(response) {
             console.log(response);
-            window.alert("Thank you for your response.");
-            //swal("Thank you for your response.");
+            swal("Thank you for your response.");
             })
             .catch(function(error) {
             console.log(error.response);
@@ -42,8 +41,7 @@ var app = new Vue({
             })
             .then(function(response) {
             console.log(response);
-            window.alert("Thank you for your response.");
-            //swal("Thank you for your response.");
+            swal("Thank you for your response.");
             })
             .catch(function(error) {
             console.log(error.response);
@@ -61,8 +59,8 @@ var app = new Vue({
             })
             .then(function(response) {
             console.log(response);
-            window.alert("We have recived your massage!Thank you.");
-            //swal("We have recived your massage!Thank you.");
+            //window.alert("We have recived your massage!Thank you.");
+            swal("We have recived your massage!Thank you.");
             })
             .catch(function(error) {
             console.log(error.response);
