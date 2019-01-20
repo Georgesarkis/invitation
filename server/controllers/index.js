@@ -4,6 +4,7 @@ var router = express.Router()
 
 // Insert routes below
 router.use('/api/rsvp', require('./RSVP.controller'));
+router.use('/api/contact', require('./Contact.controller'));
 
 router.route('/*').get(function (req, res) {
     var relativeAppPath = req.app.get('appPath');

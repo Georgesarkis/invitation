@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var morgan = require('morgan');
 var path = require('path');
+var http = require("http");
 
 // Variables
 var mongoURI = process.env.MONGODB_URI || 'mongodb://admin:admin123@ds215633.mlab.com:15633/invitation';
@@ -46,6 +47,11 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.json(err_res);
 });
+
+setInterval(function() {
+    http.get("http://georgelalainvitation.herokuapp.com");
+    console.log("iner request!");
+}, 300000);
 
 app.listen(port, function(err) {
     if (err) throw err;

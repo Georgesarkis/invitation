@@ -4,8 +4,7 @@ var Schema = mongoose.Schema;
 
 var RSVPSchema = new Schema({
     name: { type: String },
-    email: { type: Number },
-    tel:{ type: Number },
+    email: { type: String },
     RSVPanswer : { type: Boolean },
     numGuests : { type: Number }
 });
