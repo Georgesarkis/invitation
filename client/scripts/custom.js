@@ -18,9 +18,9 @@ var app = new Vue({
     methods: {
         WillAttend: function() {
             if(this.name.length == 0){
-                swal("Please write your first and last name.");
+                swal("Your name is missing!", "Please write your first and last name.", "error");
             }else if(this.Number.length == 0){
-                swal("Please write number of people will attend.");
+                swal("Number of attendance is missing!", "Please write number of people will attend.", "error");
             }else{
                 axios
                 .post("/api/rsvp", {
@@ -31,7 +31,7 @@ var app = new Vue({
                 })
                 .then(function(response) {
                 console.log(response);
-                swal("Thank you for your response.");
+                swal("Thank you!", "Thank you for your response.", "success")
                 })
                 .catch(function(error) {
                 console.log(error.response);
@@ -40,7 +40,7 @@ var app = new Vue({
         },
         WillNotAttend: function(){
             if(this.name.length == 0){
-                swal("Please write your first and last name.");
+                swal("Your name is missing!", "Please write your first and last name.", "error");
             }else{
                 axios
                 .post("/api/rsvp", {
@@ -51,7 +51,7 @@ var app = new Vue({
                 })
                 .then(function(response) {
                 console.log(response);
-                swal("Thank you for your response.");
+                swal("Thank you!", "Thank you for your response.", "success")
                 })
                 .catch(function(error) {
                 console.log(error.response);
@@ -60,13 +60,13 @@ var app = new Vue({
         },
         ConntactUs:function(){
             if(this.fname.length == 0){
-                swal("Please write your first name.");
+                swal("First name is missing!", "Please write your first name.", "error");
             }else if(this.lname.length == 0){
-                swal("Please write your last name.");
+                swal("Last name is missing!", "Please write your last name.", "error");
             }else if(this.email.length == 0 && this.tel.length == 0){
-                swal("Please write your email or telephone number.");
+                swal("email or telephone number is missing!", "Please write your email or telephone number.", "error");
             }else if(this.message.length == 0){
-                swal("Please write some message.");
+                swal("Message is missing!", "Please write some message.", "error");
             }else{
                 axios
                 .post("/api/contact", {
@@ -79,7 +79,7 @@ var app = new Vue({
                 })
                 .then(function(response) {
                 console.log(response);
-                swal("We have recived your massage!Thank you.");
+                swal("Thank you!", "We have recived your massage.", "success")
                 })
                 .catch(function(error) {
                 console.log(error.response);
@@ -88,11 +88,11 @@ var app = new Vue({
         },
         SendWishes:function(){
             if(this.fname.length == 0){
-                swal("Please write your first name.");
+                swal("First name is missing!", "Please write your first name.", "error");
             }else if(this.lname.length == 0){
-                swal("Please write your last name.");
+                swal("Last name is missing!", "Please write your last name.", "error");
             }else if(this.wishes.length == 0){
-                swal("Please write some wishes.");
+                swal("Wishes is missing!", "Please write some wishes.", "error");
             }else{
                 axios
                 .post("/api/wishes", {
@@ -102,7 +102,7 @@ var app = new Vue({
                 })
                 .then(function(response) {
                 console.log(response);
-                swal("Thank you for your worm wishes");
+                swal("Thank you!", "Thank you for your worm wishes.", "success")
                 })
                 .catch(function(error) {
                 console.log(error.response);
